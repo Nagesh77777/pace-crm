@@ -1,0 +1,90 @@
+<div class="modal-overlay" *ngIf="isOpen" (click)="closeModal()">
+  <div class="modal-container" (click)="$event.stopPropagation()">
+    
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <div class="header-title">
+        <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+        <h3>Manage Messaging Templates</h3>
+      </div>
+      <button class="close-btn" (click)="closeModal()">&times;</button>
+    </div>
+
+    <!-- Modal Body -->
+    <div class="modal-body">
+      
+      <!-- Top Banner / Info Box -->
+      <div class="info-banner">
+        <div class="banner-text">
+          <label class="banner-title">Edit Existing or Create New?</label>
+          <p class="banner-subtitle">Select a previous template to modify or start fresh.</p>
+        </div>
+        
+        <div class="banner-select">
+          <select [value]="selectedTemplateId" (change)="onTemplateSelect($event)" class="select-dropdown">
+            <option value="new">-- Create New --</option>
+            <option *ngFor="let t of existingTemplates" [value]="t.id">
+              {{ t.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Form Content -->
+      <form [formGroup]="templateForm">
+        
+        <!-- Template Name -->
+        <div class="form-group">
+          <label>Template Name</label>
+          <input 
+            type="text" 
+            formControlName="name" 
+            class="form-control" 
+            placeholder="e.g. Flight Delay Notice" 
+          />
+        </div>
+
+        <!-- Subject Line -->
+        <div class="form-group">
+          <label>Subject Line (For Email/Push)</label>
+          <input 
+            type="text" 
+            formControlName="subject" 
+            class="form-control" 
+            placeholder="Enter subject line..." 
+          />
+        </div>
+
+        <!-- Template Content -->
+        <div class="form-group">
+          <div class="label-with-hint">
+            <label>Template Content</label>
+            <span class="hint">You can use variables like <code><code>{{ '{{first_name}}' }}</code></code></span>
+          </div>
+          <textarea 
+            formControlName="content" 
+            rows="6" 
+            class="form-control textarea-control" 
+            placeholder="Write template message here..."
+          ></textarea>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- Modal Footer -->
+    <div class="modal-footer">
+      <button class="btn-cancel" (click)="closeModal()">Cancel</button>
+      <button 
+        class="btn-save" 
+        [disabled]="templateForm.invalid" 
+        (click)="onSubmit()"
+      >
+        Save Template
+      </button>
+    </div>
+
+  </div>
+</div>
