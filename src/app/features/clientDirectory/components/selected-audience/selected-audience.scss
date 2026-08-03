@@ -1,0 +1,57 @@
+.audience-panel {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb !important;
+}
+
+.audience-title {
+  font-size: 0.95rem;
+  color: #1f2937;
+}
+
+.count-badge {
+  background-color: #f9fafb;
+  color: #374151;
+  border-color: #e5e7eb !important;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.audience-item-card {
+  border-color: #e5e7eb !important;
+  background-color: #ffffff;
+}
+
+.audience-name {
+  font-size: 0.82rem;
+  color: #1f2937;
+}
+
+.audience-email {
+  font-size: 0.72rem;
+  color: #6b7280;
+  display: block;
+}
+
+.remove-btn {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #6b7280;
+}
+
+.remove-btn:hover {
+  color: #ef4444 !important;
+}
+
+.compose-btn {
+  background-color: #a3723f;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.compose-btn:hover {
+  background-color: #8c5e2e;
+  color: #ffffff;
+}

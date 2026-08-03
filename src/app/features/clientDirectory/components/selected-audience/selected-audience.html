@@ -1,0 +1,45 @@
+<div class="card audience-panel border-0 shadow-sm rounded-3 p-3 h-100 d-flex flex-column bg-white">
+
+  <!-- Header with Badge Count -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h6 class="fw-bold mb-0 text-dark audience-title">Selected Audience</h6>
+    <span class="badge count-badge rounded-circle border px-2 py-1">
+      {{ selectedAudience.length }}
+    </span>
+  </div>
+
+  <!-- Selected Clients List -->
+  <div class="flex-grow-1 overflow-auto pe-1 mb-3">
+    <div *ngFor="let client of selectedAudience"
+      class="card audience-item-card border rounded-3 p-2 mb-2 d-flex flex-row align-items-center justify-content-between shadow-none">
+
+      <div class="d-flex align-items-center gap-2">
+        <img [src]="client.avatar" [alt]="client.name" class="rounded-circle" width="34" height="34">
+        <div>
+          <div class="fw-bold audience-name">{{ client.name }}</div>
+          <span class="text-muted audience-email">{{ client.email }}</span>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-link text-muted p-0 me-1 remove-btn" (click)="onRemove(client)"
+        title="Remove client">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="selectedAudience.length === 0" class="text-center text-muted my-auto py-5">
+      <i class="fa-regular fa-user fs-3 mb-2 d-block"></i>
+      <small>No audience selected yet</small>
+    </div>
+  </div>
+
+  <!-- Compose Message Button -->
+  <button type="button"
+    class="btn compose-btn w-100 py-2 fw-medium d-flex justify-content-center align-items-center gap-2"
+    (click)="onCompose()">
+    Compose Message
+    <i class="fa-solid fa-arrow-right fs-6"></i>
+  </button>
+
+</div>

@@ -1,0 +1,42 @@
+<div class="d-flex flex-column h-100">
+  <!-- Search Input Bar -->
+  <div class="input-group search-container mb-4 shadow-sm">
+    <span class="input-group-text bg-white border-end-0 ps-3 text-muted">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </span>
+    <input 
+      type="text" 
+      class="form-control border-start-0 py-2 ps-2 shadow-none search-input" 
+      placeholder="Search clients by name or email..."
+      [(ngModel)]="searchQuery">
+  </div>
+
+  <!-- Client Cards Grid -->
+  <div class="row g-3 overflow-auto pe-1">
+    <div class="col-md-6" *ngFor="let client of filteredClients">
+      <!-- Full Card Clickable (Adds/Removes from Selected Audience) -->
+      <div 
+        class="card client-card border rounded-3 p-3 d-flex flex-row align-items-center justify-content-between shadow-sm cursor-pointer"
+        [class.active-gold-border]="isSelected(client)"
+        (click)="onCardClick(client)">
+        
+        <!-- User Info -->
+        <div class="d-flex align-items-center gap-3">
+          <img [src]="client.avatar" [alt]="client.name" class="rounded-circle avatar-img">
+          <div>
+            <h6 class="mb-0 fw-bold client-name">{{ client.name }}</h6>
+            <span class="text-muted client-email">{{ client.email }}</span>
+          </div>
+        </div>
+
+        <!-- Send Button Clickable (Only sends to this specific client) -->
+        <button 
+          class="btn send-btn px-3 py-1 rounded-2"
+          (click)="onSendButtonClick($event, client)">
+          Send
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>

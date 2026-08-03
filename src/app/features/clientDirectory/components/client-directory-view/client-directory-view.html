@@ -1,0 +1,24 @@
+<div class="container-fluid p-4 h-100 bg-light-gray overflow-auto">
+  <div class="row g-4 h-100">
+
+    <!-- 1. Left Component: Client Directory Grid -->
+    <div class="col-lg-8 h-100">
+      <app-client-directory
+        [clients]="clients"
+        [selectedAudience]="selectedAudience"
+        (toggleSelect)="handleToggleSelect($event)"
+        (sendSingleClient)="handleSendSingleClient($event)">
+      </app-client-directory>
+    </div>
+
+    <!-- 2. Right Component: Selected Audience Side Panel -->
+    <div class="col-lg-4 h-100">
+      <app-selected-audience
+        [selectedAudience]="selectedAudience"
+        (removeClient)="handleRemoveClient($event)"
+        (composeMessage)="handleComposeMessage()">
+      </app-selected-audience>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<!-- Modal Overlay Background -->
+<div class="modal-overlay" *ngIf="isOpen" (click)="closeModal()">
+  
+  <!-- Modal Box (Stop Click Propagation to prevent closing on inside click) -->
+  <div class="modal-content shadow-lg rounded-3 bg-white" (click)="$event.stopPropagation()">
+    
+    <!-- Modal Header -->
+    <div class="modal-header-custom d-flex align-items-center justify-content-between p-3 border-bottom">
+      <div class="d-flex align-items-center gap-2">
+        <i class="fa-solid fa-user-plus brand-gold fs-5"></i>
+        <h6 class="modal-title fw-bold text-dark mb-0">Add Client Profile</h6>
+      </div>
+      <button type="button" class="btn-close-custom" (click)="closeModal()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Modal Body & Form -->
+    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()" class="p-4">
+      
+      <!-- First Name & Last Name -->
+      <div class="row g-3 mb-3">
+        <div class="col-6">
+          <label class="form-label-custom">First Name</label>
+          <input 
+            type="text" 
+            class="form-control form-control-custom" 
+            formControlName="firstName" 
+            placeholder="">
+        </div>
+        <div class="col-6">
+          <label class="form-label-custom">Last Name</label>
+          <input 
+            type="text" 
+            class="form-control form-control-custom" 
+            formControlName="lastName" 
+            placeholder="">
+        </div>
+      </div>
+
+      <!-- Email Address -->
+      <div class="mb-3">
+        <label class="form-label-custom">Email Address</label>
+        <input 
+          type="email" 
+          class="form-control form-control-custom" 
+          formControlName="email" 
+          placeholder="">
+      </div>
+
+      <!-- Phone Number (WhatsApp) -->
+      <div class="mb-3">
+        <label class="form-label-custom">Phone Number (WhatsApp)</label>
+        <input 
+          type="text" 
+          class="form-control form-control-custom" 
+          formControlName="phone" 
+          placeholder="">
+      </div>
+
+      <!-- Traveler Tier Dropdown -->
+      <div class="mb-4">
+        <label class="form-label-custom">Traveler Tier</label>
+        <div class="select-wrapper">
+          <select class="form-select form-control-custom" formControlName="travelerTier">
+            <option *ngFor="let tier of tierOptions" [value]="tier">{{ tier }}</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Modal Action Buttons -->
+      <div class="d-flex justify-content-end gap-2 pt-2">
+        <button type="button" class="btn btn-cancel px-3 py-2" (click)="closeModal()">Cancel</button>
+        <button type="submit" class="btn btn-save px-3 py-2" [disabled]="clientForm.invalid">Save Profile</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>

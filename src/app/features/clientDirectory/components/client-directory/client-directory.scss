@@ -1,0 +1,73 @@
+.cursor-pointer {
+  cursor: pointer;
+  user-select: none;
+}
+
+.search-container {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+}
+
+.search-input {
+  background-color: transparent !important;
+  border: none !important;
+  font-size: 0.875rem;
+  color: #1f2937;
+}
+
+.search-container .input-group-text {
+  border: none;
+  background-color: transparent !important;
+  color: #9ca3af;
+}
+
+/* Card Styling */
+.client-card {
+  border-color: #e5e7eb !important;
+  background-color: #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+
+.client-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.client-card.active-gold-border {
+  border-color: #a3723f !important;
+  background-color: #fdfbf7;
+}
+
+.avatar-img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+}
+
+.client-name {
+  font-size: 0.9rem;
+  color: #1f2937;
+}
+
+.client-email {
+  font-size: 0.78rem;
+  color: #6b7280;
+  display: block;
+}
+
+/* Send Button Styling */
+.send-btn {
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  color: #4b5563;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.send-btn:hover {
+  background-color: #a3723f;
+  border-color: #a3723f;
+  color: #ffffff;
+}

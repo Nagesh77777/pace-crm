@@ -1,0 +1,97 @@
+/* Dark Overlay Background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Always on top of any URL/Component */
+}
+
+/* Modal Content Card */
+.modal-content {
+  width: 100%;
+  max-width: 480px;
+  background-color: #ffffff;
+  border-radius: 12px !important;
+  border: none;
+}
+
+.brand-gold {
+  color: #a3723f;
+}
+
+.modal-title {
+  font-size: 0.95rem;
+}
+
+.btn-close-custom {
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.btn-close-custom:hover {
+  color: #111827;
+}
+
+/* Form Styles */
+.form-label-custom {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-control-custom {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  color: #1f2937;
+  box-shadow: none !important;
+}
+
+.form-control-custom:focus {
+  border-color: #a3723f;
+}
+
+/* Buttons */
+.btn-cancel {
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #4b5563;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.btn-cancel:hover {
+  background-color: #e5e7eb;
+}
+
+.btn-save {
+  background-color: #a3723f; /* Exact theme brown from design */
+  border: none;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.btn-save:hover {
+  background-color: #8c5e2e;
+  color: #ffffff;
+}
+
+.btn-save:disabled {
+  background-color: #d1d5db;
+  color: #9ca3af;
+}
