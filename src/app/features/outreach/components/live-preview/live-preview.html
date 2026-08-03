@@ -1,0 +1,79 @@
+<div class="preview-card">
+  <!-- Top Bar -->
+  <div class="preview-header">
+    <span class="preview-title">LIVE PREVIEW</span>
+    <div class="window-dots">
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="dot red"></span>
+    </div>
+  </div>
+
+  <!-- Screen Content Wrapper -->
+  <div class="preview-body">
+    
+    <!-- 1. EMAIL PREVIEW -->
+    <div *ngIf="channel === 'email'" class="email-preview-box">
+      <div class="email-header-info">
+        <h4 class="email-subject">{{ emailData.subject }}</h4>
+        <p class="email-sender">From: Pace Travels Support &lt;support&#64;pacetravels.com&gt;</p>
+      </div>
+      <div class="email-body-text">
+        <p *ngFor="let paragraph of emailData.body.split('\n\n')">{{ paragraph }}</p>
+        <div class="email-signoff">
+          <p>Safe travels,</p>
+          <p>The Pace Travels Team</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. WHATSAPP CHAT PREVIEW -->
+    <div *ngIf="channel === 'whatsapp'" class="whatsapp-container">
+      <div class="wa-header">
+        <div class="wa-avatar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+        </div>
+        <div class="wa-title-block">
+          <span class="wa-name">Pace Support <span class="verified">✔</span></span>
+          <span class="wa-sub">Business Account</span>
+        </div>
+      </div>
+
+      <div class="wa-chat-area">
+        <div class="wa-bubble">
+          <p class="wa-text">{{ whatsappData.message }}</p>
+          <span class="wa-time">11:42 AM</span>
+        </div>
+
+        <div class="wa-actions">
+          <button class="wa-action-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View Itinerary
+          </button>
+          <button class="wa-action-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Talk to Agent
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. WEB PUSH DESKTOP NOTIFICATION PREVIEW -->
+    <div *ngIf="channel === 'webpush'" class="push-container">
+      <div class="push-card">
+        <div class="push-icon-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+        </div>
+        <div class="push-content">
+          <div class="push-meta">
+            <span class="app-name">Pace Travels</span>
+            <span class="time-ago">now</span>
+          </div>
+          <h5 class="push-title">{{ webpushData.title }}</h5>
+          <p class="push-msg">{{ webpushData.message }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

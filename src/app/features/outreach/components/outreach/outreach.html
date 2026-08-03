@@ -1,0 +1,17 @@
+<div class="outreach-grid-container">
+  <!-- Left Side: Form Container -->
+  <div class="left-col">
+    <app-outreach-form [recipient]="recipientText" (channelChange)="onChannelChange($event)"
+      (formDataChange)="onFormDataChange($event)">
+    </app-outreach-form>
+  </div>
+
+  <!-- Right Side: Profile & Live Preview -->
+  <div class="right-col">
+    <app-customer-profile class="profile-widget"></app-customer-profile>
+
+    <app-live-preview class="preview-widget" [channel]="currentChannel" [emailData]="formData.email"
+      [whatsappData]="formData.whatsapp" [webpushData]="formData.webpush">
+    </app-live-preview>
+  </div>
+</div>

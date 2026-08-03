@@ -1,0 +1,29 @@
+.outreach-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+  padding: 24px;
+  height: 100%;
+  box-sizing: border-box;
+
+  .left-col {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-col {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .profile-widget {
+      flex-shrink: 0;
+    }
+
+    .preview-widget {
+      flex: 1;
+    }
+  }
+}
