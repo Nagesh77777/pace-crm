@@ -1,0 +1,92 @@
+<aside class="sidebar">
+  <!-- Brand Header -->
+  <div class="sidebar-brand">
+    <div class="brand-logo">
+      <!-- Exact Wing / Plane Icon -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M2.5 12c0 0 6-3.5 10.5-5.5 5-2.2 8.5-2.5 9.5-1.5s0 4.5-2.2 9.5c-2 4.5-5.5 10.5-5.5 10.5l-2.5-5.5L7 21l-1.5-5.5L2.5 12z"/>
+      </svg>
+    </div>
+    <span class="brand-name">Pace<span class="highlight">CRM</span></span>
+  </div>
+
+  <!-- Navigation Menu -->
+  <nav class="sidebar-nav">
+    
+    <!-- WORKSPACE -->
+    <div class="nav-section">
+      <span class="section-title">WORKSPACE</span>
+      
+      <a routerLink="crm" routerLinkActive="active" class="nav-item">
+        <!-- Paper Plane Icon -->
+        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+        </svg>
+        <span>Outreach Hub</span>
+      </a>
+
+      <a routerLink="/crm/clientDirectory" class="nav-item">
+        <!-- Client Directory Icon -->
+        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <path d="M8 2v20"/>
+          <circle cx="14" cy="10" r="2"/>
+          <path d="M11 16c0-1.5 1.5-2.5 3-2.5s3 1 3 2.5"/>
+        </svg>
+        <span>Client Directory</span>
+      </a>
+    </div>
+
+    <!-- CRM & DATA -->
+    <div class="nav-section">
+      <span class="section-title">CRM & DATA</span>
+
+      <a href="javascript:void(0)" class="nav-item" (click)="openAddClientModal($event)">
+        <!-- Add Client Profile Icon -->
+        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+        <span>Add Client Profile</span>
+      </a>
+
+      <a href="javascript:void(0)" class="nav-item" (click)="openImportAudience($event)">
+        <!-- Import Audience CSV Icon -->
+        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <text x="7" y="16" font-size="6" font-weight="bold" fill="currentColor" stroke="none">CSV</text>
+        </svg>
+        <span>Import Audience</span>
+      </a>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="nav-section">
+      <span class="section-title">SETTINGS</span>
+
+      <a href="javascript:void(0)" class="nav-item" (click)="openTemplateModal($event)">
+        <!-- Manage Templates Icon -->
+        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <span>Manage Templates</span>
+      </a>
+
+      <a href="javascript:void(0)" class="nav-item">
+        <!-- AWS Icon -->
+        <span class="aws-badge">aws</span>
+        <span>AWS SES Config</span>
+      </a>
+    </div>
+
+  </nav>
+
+  <!-- User Profile Section -->
+  <div class="sidebar-profile">
+    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=120" alt="Sarah Jenkins" class="profile-img" />
+    <div class="profile-info">
+      <span class="profile-name">Sarah Jenkins</span>
+      <span class="profile-role">Support Lead</span>
+    </div>
+  </div>
+</aside>

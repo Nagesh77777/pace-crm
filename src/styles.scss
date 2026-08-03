@@ -1,1 +1,162 @@
-/* You can add global styles to this file, and also import other style files */
+/* ==========================================
+   PrimeNG
+========================================== */
+
+@import "primeicons/primeicons.css";
+
+
+/* ==========================================
+   Global Reset
+========================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: "Inter", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #4b5563;
+  background: #f8fafc;
+}
+
+
+/* ==========================================
+   Global Typography
+========================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: inherit;
+  color: #111827;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+}
+
+p,
+span,
+small,
+label,
+a,
+li,
+td,
+th,
+div {
+  font-family: inherit;
+}
+
+
+/* ==========================================
+   Forms
+========================================== */
+
+input,
+textarea,
+select,
+button,
+.form-control,
+.btn {
+  font-family: inherit;
+}
+
+
+/* ==========================================
+   Font Weights
+========================================== */
+
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+.fw-semibold {
+  font-weight: 600 !important;
+}
+
+.fw-medium {
+  font-weight: 500 !important;
+}
+
+
+/* ==========================================
+   Buttons
+========================================== */
+
+.sub-btnPrimary {
+  font-weight: 600 !important;
+  letter-spacing: .01em;
+}
+
+.sp-btnGoogle {
+  font-weight: 600 !important;
+  color: #374151;
+}
+
+
+/* ==========================================
+   PrimeNG Dialog
+========================================== */
+
+.p-dialog-mask {
+  background: rgba(0,0,0,.45) !important;
+  z-index: 99999 !important;
+  position: fixed !important;
+  inset: 0;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.import-audience-dialog {
+  background: #fff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,.1) !important;
+  overflow: hidden !important;
+}
+
+
+/* ==========================================
+   PrimeNG Toast
+========================================== */
+
+.p-toast {
+  z-index: 999999 !important;
+}
+
+.p-toast .p-toast-message {
+  border: 2px solid #1f2937 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,.18);
+}
+
+.p-toast .p-toast-message-success {
+  border-left: 6px solid #22c55e !important;
+}
+
+.p-toast .p-toast-message-error {
+  border-left: 6px solid #ef4444 !important;
+}
+
+.p-toast .p-toast-message-warn {
+  border-left: 6px solid #f59e0b !important;
+}
+
+.p-toast .p-toast-message-info {
+  border-left: 6px solid #3b82f6 !important;
+}

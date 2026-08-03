@@ -1,0 +1,21 @@
+<div class="layout-wrapper">
+  <!-- SIDEBAR COMPONENT -->
+  <app-sidebar></app-sidebar>
+
+  <!-- RIGHT CONTENT AREA -->
+  <div class="main-content-wrapper">
+    <!-- HEADER COMPONENT -->
+    <app-header></app-header>
+
+    <!-- ROUTER OUTLET FOR INNER PAGES -->
+    <main class="page-content">
+      <router-outlet></router-outlet>
+    </main>
+
+    <!-- FOOTER COMPONENT -->
+    <app-footer></app-footer>
+  </div>
+</div>
+<app-add-client-modal></app-add-client-modal>
+<app-import-audience-modal></app-import-audience-modal>
+<app-manage-templates-modal></app-manage-templates-modal>

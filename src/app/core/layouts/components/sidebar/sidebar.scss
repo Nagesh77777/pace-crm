@@ -1,0 +1,155 @@
+// Exact Colors extracted from screenshot
+$bg-sidebar: #0b111e;
+$color-gold: #c59b27;
+$color-text-active: #d69e2e;
+$active-item-bg: #1b2230;
+$text-heading: #4b5563;
+$text-item: #d1d5db;
+$border-color: rgba(255, 255, 255, 0.08);
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.sidebar {
+  width: 240px;
+  height: 100%;
+  background-color: $bg-sidebar;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  user-select: none;
+
+  /* --- BRAND LOGO --- */
+  .sidebar-brand {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 12px;
+
+    .brand-logo {
+      color: $color-gold;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-name {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.2px;
+
+      .highlight {
+        color: $color-gold;
+      }
+    }
+  }
+
+  /* --- NAVIGATION --- */
+  .sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px 14px;
+
+    .nav-section {
+      margin-bottom: 24px;
+
+      .section-title {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: #525a6e;
+        margin-bottom: 12px;
+        padding-left: 8px;
+        text-transform: uppercase;
+      }
+
+      .nav-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 11px 14px;
+        color: $text-item;
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 600;
+        border-radius: 8px;
+        margin-bottom: 4px;
+        transition: all 0.15s ease-in-out;
+
+        .nav-icon {
+          flex-shrink: 0;
+          color: #9ca3af;
+        }
+
+        .aws-badge {
+          font-size: 0.65rem;
+          font-weight: 900;
+          color: #ffffff;
+          border: 1px solid #9ca3af;
+          padding: 1px 3px;
+          border-radius: 3px;
+          line-height: 1;
+        }
+
+        &:hover {
+          color: #ffffff;
+          background-color: rgba(255, 255, 255, 0.03);
+
+          .nav-icon {
+            color: #ffffff;
+          }
+        }
+
+        /* Active Selected State (Outreach Hub) */
+        &.active {
+          background-color: $active-item-bg;
+          color: $color-text-active;
+
+          .nav-icon {
+            color: $color-text-active;
+          }
+        }
+      }
+    }
+  }
+
+  /* --- BOTTOM USER PROFILE --- */
+  .sidebar-profile {
+    height: 68px;
+    padding: 0 20px;
+    border-top: 1px solid $border-color;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    .profile-img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+
+      .profile-name {
+        color: #ffffff;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .profile-role {
+        color: #6b7280;
+        font-size: 0.78rem;
+        font-weight: 400;
+        margin-top: 1px;
+      }
+    }
+  }
+}
